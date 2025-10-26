@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './components/layout/Sidebar';
 import AuthForm from './components/auth/AuthForm';
 import Login from './components/auth/Login';
+import ForgotPasswordForm from './components/auth/ForgotPasswordForm';
 
 const LegalCityAuth = () => {
   const [authMode, setAuthMode] = useState('register');
@@ -16,8 +17,13 @@ const LegalCityAuth = () => {
         <div className="w-full max-w-[620px]">
           {authMode === 'register' ? (
             <AuthForm onSwitchToLogin={() => setAuthMode('login')} />
+          ) : authMode === 'forgot' ? (
+            <ForgotPasswordForm onSwitchToLogin={() => setAuthMode('login')} />
           ) : (
-            <Login onSwitchToRegister={() => setAuthMode('register')} />
+            <Login
+              onSwitchToRegister={() => setAuthMode('register')}
+              onSwitchToForgot={() => setAuthMode('forgot')}
+            />
           )}
         </div>
       </main>

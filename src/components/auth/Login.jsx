@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 
-const Login = ({ onSwitchToRegister }) => {
+const Login = ({ onSwitchToRegister, onSwitchToForgot }) => {
   const [userType, setUserType] = useState('user');
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -126,8 +126,9 @@ const Login = ({ onSwitchToRegister }) => {
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="block text-sm font-semibold text-gray-900">Password</label>
-                <button 
+                <button
                   type="button"
+                  onClick={onSwitchToForgot}
                   className="text-xs text-gray-500 hover:text-[#0EA5E9] font-medium"
                 >
                   Forgot Password?
@@ -191,8 +192,9 @@ const Login = ({ onSwitchToRegister }) => {
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="block text-sm font-semibold text-gray-900">Password</label>
-                <button 
+                <button
                   type="button"
+                  onClick={onSwitchToForgot}
                   className="text-xs text-gray-500 hover:text-[#0EA5E9] font-medium"
                 >
                   Forgot Password?
