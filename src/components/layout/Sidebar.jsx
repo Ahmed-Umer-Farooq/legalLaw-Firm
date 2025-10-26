@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Sidebar = ({ isAuthPage = false }) => {
-  // Auth page sidebar - Enhanced with DARKER, more vibrant colors and WIDER to match original
+  // Auth page sidebar - Enhanced with DARKER, more vibrant colors and WIDER to cover almost half screen
   if (isAuthPage) {
     return (
-      <aside className="w-[360px] bg-gradient-to-br from-[#0369A1] via-[#075985] to-[#0C4A6E] min-h-screen p-12 flex flex-col relative overflow-hidden shadow-2xl">
+      <aside className="w-[40vw] bg-gradient-to-br from-[#0369A1] via-[#075985] to-[#0C4A6E] min-h-screen p-16 flex flex-col relative overflow-hidden shadow-2xl">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-15">
           <div 
@@ -25,39 +25,39 @@ const Sidebar = ({ isAuthPage = false }) => {
         <div className="absolute bottom-40 left-10 w-40 h-40 bg-white opacity-10 rounded-full blur-3xl"></div>
 
         {/* Logo Section */}
-        <div className="relative z-10 mb-12">
-          <div className="flex items-center gap-3 mb-12">
-            <div className="bg-white rounded-full px-6 py-3 shadow-2xl inline-flex transform hover:scale-105 transition-transform duration-300">
-              <span className="text-[#0284C7] font-extrabold text-2xl tracking-tight">Legal</span>
+        <div className="relative z-10 mb-12 flex flex-col items-center text-center">
+          <div className="flex items-center gap-4 mb-16 justify-center">
+            <div className="bg-white rounded-2xl px-7 py-3.5 shadow-lg inline-flex">
+              <span className="text-[#0284C7] font-bold text-3xl tracking-tight">Legal</span>
             </div>
-            <span className="text-white font-extrabold text-2xl tracking-tight drop-shadow-lg">City</span>
+            <span className="text-white font-bold text-3xl tracking-tight">City</span>
           </div>
           
           {/* Tagline with better styling */}
-          <div className="space-y-2">
-            <h2 className="text-white text-2xl font-bold leading-tight drop-shadow-lg">
+          <div className="space-y-3">
+            <h2 className="text-white text-3xl font-semibold leading-tight">
               Discover the world's top
             </h2>
-            <h2 className="text-white text-2xl font-bold leading-tight drop-shadow-lg">
+            <h2 className="text-white text-3xl font-semibold leading-tight">
               Lawyers
             </h2>
-            <div className="w-16 h-1 bg-white opacity-60 rounded-full mt-4"></div>
+            <div className="w-20 h-1 bg-white/70 rounded-full mt-6 mx-auto"></div>
           </div>
         </div>
 
         {/* Feature badges - More visible */}
-        <div className="relative z-10 mt-auto space-y-4">
-          <div className="flex items-center gap-3 text-white text-sm font-medium">
-            <div className="w-2 h-2 bg-white rounded-full shadow-lg"></div>
-            <span className="drop-shadow">Trusted by 10,000+ users</span>
+        <div className="relative z-10 mt-auto space-y-5">
+          <div className="flex items-center gap-4 text-white/90 text-base">
+            <div className="w-2 h-2 bg-white rounded-full"></div>
+            <span>Trusted by 10,000+ users</span>
           </div>
-          <div className="flex items-center gap-3 text-white text-sm font-medium">
-            <div className="w-2 h-2 bg-white rounded-full shadow-lg"></div>
-            <span className="drop-shadow">Verified legal professionals</span>
+          <div className="flex items-center gap-4 text-white/90 text-base">
+            <div className="w-2 h-2 bg-white rounded-full"></div>
+            <span>Verified legal professionals</span>
           </div>
-          <div className="flex items-center gap-3 text-white text-sm font-medium">
-            <div className="w-2 h-2 bg-white rounded-full shadow-lg"></div>
-            <span className="drop-shadow">Secure & confidential</span>
+          <div className="flex items-center gap-4 text-white/90 text-base">
+            <div className="w-2 h-2 bg-white rounded-full"></div>
+            <span>Secure & confidential</span>
           </div>
         </div>
       </aside>

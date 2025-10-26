@@ -90,66 +90,66 @@ const AuthForm = ({ onSwitchToLogin }) => {
 
       {/* USER FORM */}
       {userType === 'user' && (
-        <div className="space-y-3">
-          <div className="grid grid-cols-2 gap-3">
+        <div className="space-y-5">
+          <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1.5">Name</label>
+              <label className="block text-sm font-medium text-gray-900 mb-2">Name</label>
               <input type="text" name="name" value={formData.name} onChange={handleInputChange}
                 className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1.5">Username</label>
+              <label className="block text-sm font-medium text-gray-900 mb-2">Username</label>
               <input type="text" name="username" value={formData.username} onChange={handleInputChange}
                 className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-900 mb-1.5">Address</label>
+            <label className="block text-sm font-medium text-gray-900 mb-2">Address</label>
             <input type="text" name="address" value={formData.address} onChange={handleInputChange}
               className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1.5">City</label>
+              <label className="block text-sm font-medium text-gray-900 mb-2">City</label>
               <input type="text" name="city" value={formData.city} onChange={handleInputChange}
                 className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1.5">State</label>
+              <label className="block text-sm font-medium text-gray-900 mb-2">State</label>
               <input type="text" name="state" value={formData.state} onChange={handleInputChange}
                 className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1.5">Zip Code</label>
+              <label className="block text-sm font-medium text-gray-900 mb-2">Zip Code</label>
               <input type="text" name="zipCode" value={formData.zipCode} onChange={handleInputChange}
                 className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1.5">Country</label>
+              <label className="block text-sm font-medium text-gray-900 mb-2">Country</label>
               <input type="text" name="country" value={formData.country} onChange={handleInputChange}
                 className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-900 mb-1.5">Mobile Number</label>
+            <label className="block text-sm font-medium text-gray-900 mb-2">Mobile Number</label>
             <input type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleInputChange}
               className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-900 mb-1.5">Email</label>
+            <label className="block text-sm font-medium text-gray-900 mb-2">Email</label>
             <input type="email" name="email" value={formData.email} onChange={handleInputChange}
               className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-900 mb-1.5">Password</label>
+            <label className="block text-sm font-medium text-gray-900 mb-2">Password</label>
             <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'} name="password" value={formData.password} onChange={handleInputChange} placeholder="6+ characters"
@@ -161,7 +161,7 @@ const AuthForm = ({ onSwitchToLogin }) => {
             </div>
           </div>
 
-          <div className="flex items-start gap-2 pt-2">
+          <div className="flex items-start gap-2 pt-3">
             <input type="checkbox" id="terms" name="acceptTerms" checked={formData.acceptTerms} onChange={handleInputChange}
               className="w-4 h-4 mt-0.5 text-[#0EA5E9] focus:ring-[#0EA5E9] rounded"/>
             <label htmlFor="terms" className="text-xs text-gray-600 cursor-pointer leading-relaxed">
@@ -170,7 +170,7 @@ const AuthForm = ({ onSwitchToLogin }) => {
           </div>
 
           <button onClick={handleSubmit} disabled={!formData.acceptTerms}
-            className="w-full py-3 bg-[#0EA5E9] hover:bg-[#0284C7] disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded text-sm transition-all mt-2">
+            className="w-full py-3 bg-[#0EA5E9] hover:bg-[#0284C7] disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded text-sm transition-all mt-4">
             Create Account
           </button>
 
@@ -218,16 +218,16 @@ const AuthForm = ({ onSwitchToLogin }) => {
       {/* LAWYER FORM - CUSTOM ASYMMETRIC LAYOUT */}
       {userType === 'lawyer' && (
         <div>
-          <div className="space-y-3">
+          <div className="space-y-5">
             {/* Row 1: Name & Username */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Name</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Name</label>
                 <input type="text" name="name" value={formData.name} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Username</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Username</label>
                 <input type="text" name="username" value={formData.username} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
@@ -235,71 +235,71 @@ const AuthForm = ({ onSwitchToLogin }) => {
 
             {/* Row 2: Address (Full Width) */}
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1.5">Address</label>
+              <label className="block text-sm font-medium text-gray-900 mb-2">Address</label>
               <input type="text" name="address" value={formData.address} onChange={handleInputChange}
                 className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
             </div>
 
             {/* Row 3: City & State */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">City</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">City</label>
                 <input type="text" name="city" value={formData.city} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">State</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">State</label>
                 <input type="text" name="state" value={formData.state} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
             </div>
 
             {/* Row 4: Zip Code & Country */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Zip Code</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Zip Code</label>
                 <input type="text" name="zipCode" value={formData.zipCode} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Country</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Country</label>
                 <input type="text" name="country" value={formData.country} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
             </div>
 
             {/* Row 5: Mobile Number (narrow) & Registration ID (wider) */}
-            <div className="grid grid-cols-[1fr_1.5fr] gap-3">
+            <div className="grid grid-cols-[1fr_1.5fr] gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Mobile Number</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Mobile Number</label>
                 <input type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Registration ID</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Registration ID</label>
                 <input type="text" name="registrationId" value={formData.registrationId} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
             </div>
 
             {/* Row 6: Email (narrow) & Law Firm (wider) */}
-            <div className="grid grid-cols-[1fr_1.5fr] gap-3">
+            <div className="grid grid-cols-[1fr_1.5fr] gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Email</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Email</label>
                 <input type="email" name="email" value={formData.email} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Law Firm</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Law Firm</label>
                 <input type="text" name="firm" value={formData.firm} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
             </div>
 
             {/* Row 7: Password (narrow) & Specialty (wider) */}
-            <div className="grid grid-cols-[1fr_1.5fr] gap-3">
+            <div className="grid grid-cols-[1fr_1.5fr] gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Password</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Password</label>
                 <div className="relative">
                   <input
                     type={showPassword ? 'text' : 'password'} name="password" value={formData.password} onChange={handleInputChange} placeholder="6+ characters"
@@ -311,14 +311,14 @@ const AuthForm = ({ onSwitchToLogin }) => {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1.5">Specialty</label>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Specialty</label>
                 <input type="text" name="specialty" value={formData.specialty} onChange={handleInputChange}
                   className="w-full px-3 py-2.5 text-sm bg-gray-200 border-0 rounded text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0EA5E9]"/>
               </div>
             </div>
           </div>
 
-          <div className="mt-4 space-y-3">
+          <div className="mt-5 space-y-4">
             <div className="flex items-start gap-2">
               <input type="checkbox" id="terms-lawyer" name="acceptTerms" checked={formData.acceptTerms} onChange={handleInputChange}
                 className="w-4 h-4 mt-0.5 text-[#0EA5E9] focus:ring-[#0EA5E9] rounded"/>

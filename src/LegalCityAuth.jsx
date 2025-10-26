@@ -12,8 +12,8 @@ const LegalCityAuth = () => {
       <Sidebar isAuthPage={true} />
 
       {/* Right form area */}
-      <main className="flex-1 flex items-start pt-16 pl-16 overflow-y-auto">
-        <div className="w-full max-w-[580px]">
+      <main className="flex-1 flex items-start justify-start pt-12 pl-16 pr-16 pb-12 overflow-y-auto">
+        <div className="w-full max-w-[620px]">
           {authMode === 'register' ? (
             <AuthForm onSwitchToLogin={() => setAuthMode('login')} />
           ) : (
