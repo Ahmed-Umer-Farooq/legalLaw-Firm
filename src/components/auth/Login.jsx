@@ -65,12 +65,12 @@ const Login = ({ onSwitchToRegister, onSwitchToForgot }) => {
       {/* Logo Section */}
       <div className="flex flex-col items-center mb-8">
         <div className="flex items-center gap-2 mb-3">
-          <div className="bg-[#0EA5E9] rounded-full px-6 py-3 shadow-lg inline-flex">
+          <div className="bg-[#0284C7] rounded-full px-6 py-3 shadow-lg inline-flex">
             <span className="text-white font-bold text-3xl">Legal</span>
           </div>
-          <span className="text-[#0EA5E9] font-bold text-3xl">City</span>
+          <span className="text-[#0284C7] font-bold text-3xl">City</span>
         </div>
-        <p className="text-[#0EA5E9] text-sm font-semibold tracking-wider uppercase">
+        <p className="text-[#0284C7] text-sm font-semibold tracking-wider uppercase">
           " Legal for the people "
         </p>
       </div>
@@ -226,7 +226,7 @@ const Login = ({ onSwitchToRegister, onSwitchToForgot }) => {
         {/* Login Button */}
         <button
           onClick={handleSubmit}
-          className="w-full py-3.5 bg-[#06B6D4] hover:bg-[#0891B2] text-white font-semibold rounded-md transition-colors text-base shadow-sm mt-6"
+          className="w-full py-3.5 bg-[#0891B2] hover:bg-[#0284C7] text-white font-semibold rounded-md transition-colors text-base shadow-md mt-6"
         >
           Log in
         </button>
