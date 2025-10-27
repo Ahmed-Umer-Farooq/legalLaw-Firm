@@ -30,16 +30,13 @@ const validateRegistration = (data) => {
 const validateLogin = (data) => {
   const errors = {};
 
-  if (!data.email || !/\S+@\S+\.\S+/.test(data.email)) {
-    errors.email = 'Valid email is required';
+  // Allow login with either email or registration_id
+  if ((!data.email || !/\S+@\S+\.\S+/.test(data.email)) && (!data.registration_id || data.registration_id.trim().length === 0)) {
+    errors.email = 'Valid email or registration ID is required';
   }
 
   if (!data.password) {
     errors.password = 'Password is required';
-  }
-
-  if (data.role === 'lawyer' && (!data.registration_id || data.registration_id.trim().length === 0)) {
-    errors.registration_id = 'Registration ID is required for lawyers';
   }
 
   return {

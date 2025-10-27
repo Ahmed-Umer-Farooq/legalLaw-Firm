@@ -29,6 +29,8 @@ app.use(passport.session());
 
 // Routes
 app.use('/api/auth', authRoutes);
+const adminRoutes = require('./routes/admin');
+app.use('/api/admin', adminRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

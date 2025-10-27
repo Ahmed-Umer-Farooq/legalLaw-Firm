@@ -1,8 +1,8 @@
 const express = require('express');
 const passport = require('../config/passport');
-const { rateLimit } = require('../utils/middleware');
+const { authenticateToken, authenticateAdmin } = require('../utils/middleware');
+const { authLimiter } = require('../utils/limiter');
 const {
-  register,
   login,
   verifyEmail,
   forgotPassword,
@@ -11,24 +11,23 @@ const {
   updateProfile,
   deleteAccount,
 } = require('../controllers/authController');
-const { authenticateToken } = require('../utils/middleware');
+const { registerUser, loginUser } = require('../controllers/userController');
+const { registerLawyer, loginLawyer } = require('../controllers/lawyerController');
 
 const router = express.Router();
 
-// Rate limiting for auth routes
-router.use(rateLimit);
-
 // Registration
-router.post('/register', register);
+router.post('/register-user', authLimiter, registerUser);
+router.post('/register-lawyer', authLimiter, registerLawyer);
 
 // Login
-router.post('/login', login);
+router.post('/login', authLimiter, login);
 
 // Email verification
 router.post('/verify-email', verifyEmail);
 
 // Password reset
-router.post('/forgot-password', forgotPassword);
+router.post('/forgot-password', authLimiter, forgotPassword);
 router.post('/reset-password', resetPassword);
 
 // Profile management

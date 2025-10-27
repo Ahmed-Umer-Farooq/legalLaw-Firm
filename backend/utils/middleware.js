@@ -1,6 +1,7 @@
 const { verifyToken } = require('./token');
+const db = require('../db');
 
-const authenticateToken = (req, res, next) => {
+const authenticateToken = async (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
 
@@ -13,7 +14,24 @@ const authenticateToken = (req, res, next) => {
     return res.status(403).json({ message: 'Invalid or expired token' });
   }
 
-  req.user = decoded;
+  // Check if user exists in users or lawyers table
+  let user = await db('users').where({ id: decoded.id }).first();
+  if (!user) {
+    user = await db('lawyers').where({ id: decoded.id }).first();
+  }
+
+  if (!user) {
+    return res.status(403).json({ message: 'User not found' });
+  }
+
+  req.user = { ...decoded, isAdmin: user.isAdmin || false };
+  next();
+};
+
+const authenticateAdmin = (req, res, next) => {
+  if (!req.user.isAdmin) {
+    return res.status(403).json({ message: 'Admin access required' });
+  }
   next();
 };
 
@@ -44,4 +62,4 @@ const rateLimit = (req, res, next) => {
   next();
 };
 
-module.exports = { authenticateToken, rateLimit };
+module.exports = { authenticateToken, authenticateAdmin, rateLimit };
